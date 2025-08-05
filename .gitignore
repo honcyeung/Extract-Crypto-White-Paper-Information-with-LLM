@@ -1,1 +1,6 @@
 .env
+.env.save
+.env.local
+*.DS_Store
+*.json
+
