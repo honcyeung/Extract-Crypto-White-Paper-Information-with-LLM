@@ -37,7 +37,8 @@ Output: The notebook writes the final, structured data to a .json file, where ea
 
 The output of this script is designed to be seamlessly picked up by an orchestrator like ADF.
 
-Pipeline Diagram:
+**Pipeline Diagram:**
+```text
 [Local Machine]                            [Azure Cloud]
 +--------------------------+           +--------------------------------+
 | 1. Run Python File       |           | 3. ADF Pipeline Triggered      |
@@ -61,6 +62,7 @@ Pipeline Diagram:
                                        | 6. Azure Cosmos DB             |
                                        |    (NoSQL Storage)             |
                                        +--------------------------------+
+```
 
 **Future Improvements**
 
