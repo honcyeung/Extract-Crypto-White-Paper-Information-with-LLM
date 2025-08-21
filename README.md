@@ -20,23 +20,9 @@ The output is specifically formatted to be ready for ingestion by an automated E
 - Orchestration Target: Azure Data Factory (ADF)
 - Storage Target: NoSQL Databases (e.g., Azure Cosmos DB, MongoDB)
 
-## Architecture & Workflow
-
-This project is designed as a local data processing stage that produces artifacts ready for a cloud-based ETL pipeline.
-
-### Local Workflow
-1. Ingestion: PDF whitepapers are placed in a designated input directory.
-2. Execution: A Python script is run via the command line, specifying the input directory and the output file path.
-3. Processing:
-   - The script reads and extracts raw text from each PDF.
-   - The text is split into manageable chunks for the LLM.
-   - LangChain, powered by an LLM, extracts structured information from the chunks based on a predefined Pydantic schema.
-   - Data from multiple chunks is intelligently merged into a single, consolidated record for each document.
-4. Output: The notebook writes the final, structured data to a .json file, where each line represents a processed document.
-
 ## Proposed ADF Pipeline Integration
 
-The output of this script is designed to be seamlessly picked up by an orchestrator like ADF.
+This project is designed as a local data processing stage that produces artifacts ready for a cloud-based ETL pipeline. The output of this script is designed to be seamlessly picked up by an orchestrator like ADF.
 
 ### Pipeline Diagram:
 ```text
@@ -64,9 +50,3 @@ The output of this script is designed to be seamlessly picked up by an orchestra
                                        |    (NoSQL Storage)             |
                                        +--------------------------------+
 ```
-
-## Future Improvements
-
-- Cloud Deployment: The script can be deployed as an Azure Function with a Blob Storage trigger for a fully automated, event-driven pipeline.
-- Scalable Database: The output can be directly loaded into a scalable NoSQL database like Azure Cosmos DB for advanced analytics and querying.
-- CI/CD: A GitHub Actions workflow can be implemented to automate testing and deployment.
