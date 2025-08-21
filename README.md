@@ -1,4 +1,5 @@
 # Crypto-Insight Engine: An LLM-Powered Data Extraction Pipeline
+[View the interactive workflow diagram here](https://honcyeung.github.io/Extract-Crypto-White-Paper-Information-with-LLM/)
 
 This project is a Python-based data engineering tool designed to ingest cryptocurrency whitepapers in PDF format, process them using a Large Language Model (LLM), and extract structured, high-quality data.
 The output is specifically formatted to be ready for ingestion by an automated ETL/ELT orchestrator like Azure Data Factory (ADF) for loading into a NoSQL database. This project demonstrates best practices in data modeling, pipeline-friendly data formats, and creating configurable, production-ready code.
